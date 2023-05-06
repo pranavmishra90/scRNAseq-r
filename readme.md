@@ -3,11 +3,11 @@
 ## Quick deploy (disposable container)
 
 ````sh
-docker run --rm -it pranavmishra90/sc-rna-seq-r:bleeding-edge bash
+docker run --rm -it pranavmishra90/sc-rna-seq-r:v0.0.1a bash
 ````
 
 ## Building
 
 ````sh
-docker build -f Dockerfile -t pranavmishra90/sc-rna-seq-r:bleeding-edge .
+docker buildx build -f ./docker/Dockerfile -t pranavmishra90/sc-rna-seq-r:v0.0.1a .
 ````

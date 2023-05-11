@@ -1,0 +1,20 @@
+
+install.packages('BiocManager')
+
+BiocManager::install(c('multtest', 'S4Vectors', 'SummarizedExperiment', 'SingleCellExperiment', 'MAST', 'DESeq2', 'BiocGenerics', 'GenomicRanges', 'IRanges', 'rtracklayer', 'monocle', 'Biobase', 'limma', 'glmGamPoi'))
+
+install.packages(c('VGAM', 'R.utils', 'metap', 'Rfast2', 'ape', 'enrichR', 'mixtools'))
+
+install.packages(c('spatstat.explore', 'spatstat.geom'))
+
+install.packages('hdf5r')
+
+install.packages('Matrix')
+
+install.packages('rgeos')
+
+install.packages('remotes')
+
+install.packages('Seurat')
+
+remotes::install_github('mojaveazure/seurat-disk')

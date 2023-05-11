@@ -1,0 +1,31 @@
+# syntax = docker/dockerfile:1.2
+FROM ubuntu:22.04
+
+#########################
+ARG IMAGE_VERSION="0.0.2"
+#########################
+
+LABEL org.opencontainers.image.title="scRNAseq on Docker"
+LABEL version=${IMAGE_VERSION}}
+LABEL org.opencontainers.image.version=${IMAGE_VERSION}}
+LABEL org.opencontainers.image.authors='Pranav Kumar Mishra'
+LABEL description="Single Cell RNA sequencing experiments in a reproducible research environment"
+LABEL org.opencontainers.image.source="https://github.com/pranavmishra90/scRNAseq-r"
+LABEL org.opencontainers.image.licenses="GPLv2"
+
+
+# General Parameters
+# WORKDIR /home/r-studio
+
+
+# Add packages and update overall installation
+RUN --mount=type=cache,target=/var/cache/apt \
+	apt-get update && \
+	apt-get install -y --no-install-recommends \
+    curl \
+    gdebi-core \
+    systemd \
+    wget \
+	yadm \
+    && rm -rf /var/lib/apt/lists/*
+
